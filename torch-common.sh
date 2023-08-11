@@ -14,7 +14,7 @@ export CMAKE_BUILD_TYPE=Release
 
 # CUDA
 export USE_CUDA=1
-export TORCH_CUDA_ARCH_LIST="8.0"                 # A100. Set to 7.5 for qgpu
+export TORCH_CUDA_ARCH_LIST="7.5"                 # A100. Set to 7.5 for qgpu
 # Faster recompilation
 export USE_PRECOMPILED_HEADERS=1
 export USE_PER_OPERATOR_HEADERS=1
@@ -44,7 +44,7 @@ export CMAKE_PREFIX_PATH=$CONDA_PREFIX
 
 # Use cudatoolkit from conda (see pytorch-dev.yaml)
 # If you have it installed system-wide (e.g. in qgpu) point CUDA_PATH to the right folder
-export CUDA_PATH=$CONDA_PREFIX
+export CUDA_PATH=/usr/local/cuda-11.8.0
 export CUDA_HOME=$CUDA_PATH
 export CMAKE_CUDA_COMPILER=$CUDA_PATH/bin/nvcc
 

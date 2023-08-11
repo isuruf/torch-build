@@ -5,7 +5,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 eval "$(conda shell.bash hook)"
 conda activate pytorch-dev
-cd ~/git/pytorch
+cd ~/git/pytorch/pytorch
 
 
 source $SCRIPT_DIR/torch-common.sh

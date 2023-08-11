@@ -33,12 +33,12 @@ dependencies:
   - conda-forge::cudnn
   # The following 6 packages install cudatoolkit
   # Not necessary in qgpu as it's installed system-wide
-  - cuda-libraries-dev
-  - cuda-nvcc
-  - cuda-gdb
-  - cuda-nvtx
-  - cuda-nvml-dev
-  - cuda-cupti
+  #- cuda-libraries-dev
+  #- cuda-nvcc
+  #- cuda-gdb
+  #- cuda-nvtx
+  #- cuda-nvml-dev
+  #- cuda-cupti
   - pip:
     - lintrunner
     - expecttest
