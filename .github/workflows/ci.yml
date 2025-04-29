@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build-torch:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            env_file: pytorch-dev.yaml
+          - os: macos-latest
+            env_file: pytorch-dev-macos.yaml
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: pytorch/pytorch
+          path: pytorch
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: "latest"
+          activate-environment: pytorch-dev
+          environment-file: ${{ matrix.env_file }}
+      - run: |
+          conda info
+          conda list
+      - run: |
+          export PYTORCH_BUILD_DIRECTORY=$PWD
+          bash pytorch-build.sh

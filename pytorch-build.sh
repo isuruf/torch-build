@@ -13,5 +13,7 @@ pwd
 pip uninstall torch -y
 python setup.py develop $@
 
+if [[ "$(uname)" != "Darwin" ]]; then
 # comment out if you're developing triton as well
 make triton
+fi
